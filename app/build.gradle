@@ -23,12 +23,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file(project.property("App.signing"))
+            storePassword project.property("App.signing.password")
+            keyAlias project.property("App.signing.alias")
+            keyPassword project.property("App.signing.password")
+        }
     }
 }
 
