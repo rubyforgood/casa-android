@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">RubyForGoodCasa</string>
+    <string name="app_name">Ruby For Good CASA</string>
+    <string name="asset_statements">
+        [{
+            \"relation\": [\"delegate_permission/common.handle_all_urls\"],
+            \"target\": {
+                \"namespace\": \"web\",
+                \"site\": \"https://casa-qa.herokuapp.com\"}
+        }]
+    </string>
 </resources>
