@@ -5,7 +5,7 @@
             \"relation\": [\"delegate_permission/common.handle_all_urls\"],
             \"target\": {
                 \"namespace\": \"web\",
-                \"site\": \"https://casa-qa.herokuapp.com\"}
+                \"site\": \"${scheme}://${hostname}\"}
         }]
     </string>
 </resources>

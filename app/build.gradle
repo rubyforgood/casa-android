@@ -18,7 +18,12 @@ android {
     }
 
     buildTypes {
+        debug {
+            manifestPlaceholders = [ hostname: "casa-qa.herokuapp.com", scheme: "https" ]
+        }
+
         release {
+            manifestPlaceholders = [ hostname: "https://casavolunteertracking.org", scheme: "https" ]
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

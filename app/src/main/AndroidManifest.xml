@@ -19,7 +19,7 @@
 
             <meta-data
                 android:name="android.support.customtabs.trusted.DEFAULT_URL"
-                android:value="https://casa-qa.herokuapp.com" />
+                android:value="${scheme}://${hostname}" />
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,8 +32,8 @@
                 <category android:name="android.intent.category.BROWSABLE"/>
 
                 <data
-                    android:scheme="https"
-                    android:host="casa-qa.herokuapp.com"/>
+                    android:scheme="${scheme}"
+                    android:host="${hostname}"/>
             </intent-filter>
         </activity>
     </application>
