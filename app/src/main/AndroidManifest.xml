@@ -19,7 +19,7 @@
 
             <meta-data
                 android:name="android.support.customtabs.trusted.DEFAULT_URL"
-                android:value="${scheme}://${hostname}" />
+                android:value="https://${hostname}" />
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +32,7 @@
                 <category android:name="android.intent.category.BROWSABLE"/>
 
                 <data
-                    android:scheme="${scheme}"
+                    android:scheme="https"
                     android:host="${hostname}"/>
             </intent-filter>
         </activity>
