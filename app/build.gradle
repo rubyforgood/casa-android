@@ -40,10 +40,23 @@ android {
 
     signingConfigs {
         debug {
-            storeFile file(project.property("App.signing"))
-            storePassword project.property("App.signing.password")
-            keyAlias project.property("App.signing.alias")
-            keyPassword project.property("App.signing.password")
+            storeFile file("../CASA_keystore.jsk")
+            storePassword "%f=+38?lBr-YWJ82"
+            keyAlias "app-key"
+            keyPassword "%f=+38?lBr-YWJ82"
+        }
+
+        release {
+            def propertiesFile = rootProject.file('keystore.properties')
+
+            if (propertiesFile.exists()) {
+                def properties = new Properties()
+                properties.load(new FileInputStream(propertiesFile))
+                storeFile = file(properties['App.signing.storeFile'])
+                storePassword = properties['App.signing.password']
+                keyAlias = properties['App.signing.alias']
+                keyPassword = properties['App.signing.password']
+            }
         }
     }
 }
