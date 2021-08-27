@@ -23,7 +23,7 @@ android {
         }
 
         release {
-            manifestPlaceholders = [ hostname: "https://casavolunteertracking.org" ]
+            manifestPlaceholders = [ hostname: "https://casa-qa.herokuapp.com" ]
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
