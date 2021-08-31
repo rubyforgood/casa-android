@@ -22,6 +22,7 @@ android {
             manifestPlaceholders = [ hostname: "casa-qa.herokuapp.com" ]
         }
 
+
         release {
             manifestPlaceholders = [ hostname: "https://casa-qa.herokuapp.com" ]
             minifyEnabled false
