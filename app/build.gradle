@@ -17,28 +17,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
-        debug {
-            manifestPlaceholders = [ hostname: "casa-qa.herokuapp.com" ]
-        }
-
-
-        release {
-            manifestPlaceholders = [ hostname: "https://casa-qa.herokuapp.com" ]
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
     signingConfigs {
         debug {
             storeFile file("../CASA_keystore.jsk")
@@ -59,6 +37,28 @@ android {
                 keyPassword = properties['App.signing.password']
             }
         }
+    }
+
+    buildTypes {
+        debug {
+            manifestPlaceholders = [hostname: "casa-qa.herokuapp.com"]
+        }
+
+        release {
+            manifestPlaceholders = [ hostname: "casa-qa.herokuapp.com" ]
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
 
